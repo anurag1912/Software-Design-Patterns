@@ -1,0 +1,24 @@
+Design a framework for a graphics editor to handle different shapes uniformly. The Shape interface is given as below.
+
+A shape can be basic or complex. The basic shape is a line, where a complex shape is composed with other shapes. 
+For example, a rectangle is made of four line objects.
+The test cases should cover at least three shapes including Line, Triangle, Arrow (with triangle head).
+
+public interface Shape {
+  public void renderShapeToScreen(); // draw this shape on screen
+  public Shape[] explodeShape(); // return the list of all basic shapes forming this shape
+}
+public class Line implements Shape {
+  // instance variables
+  public Line(int startX, int startY, int endX, int endY) {
+    // set instance variables
+  }
+  public Shape[] explodeShape() {
+    Shape[] shapeParts = {this};
+    return shapeParts;
+  }
+
+  public void renderShapeToScreen() {
+    System.out.println("\nDraw a line");
+  }
+}
