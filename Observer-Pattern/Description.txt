@@ -1,0 +1,14 @@
+Each robot in the team is equipped with a visual sensor, which is used to detect the ball. 
+However, after our first phase of the development, we have noticed that the visual sensor consumes too much power while it is activated. 
+It quickly drained battery. Before we can upgrade the hardware, we have to come up with a design to work around this problem. 
+It seems that the hardware vendor of the sensor is aware of the problem. They had supplied API, sleep() to put the sensor in sleep mode, 
+which barely consumes power, and resume() to activate it immediately. 
+We are also aware of that the field keeps track of the ball all the time and can provide the coordinate of the ball. 
+Currently, there are three objects provide the ball coordinates, with each covers one third of the field, namely, lower, middle, and upper. It happened that the position midfielder is responsible in the area covered by field object middle; defender is responsible in the area covered by field object lower (for the other team, it's their forward area); forward is responsible in the area covered by field object upper (for the other team, it's their defender area); goalkeeper is responsible in a subset area within the one covered by lower.
+You are given the task to design and implement a software design pattern & a mechanism
+for your robot to play an entire game without changing battery.
+
+Hint:
+A robot activates its sensor only if the ball is in its position area;
+There could be more than one robots having the same position;
+Some robots may have two positions.
