@@ -1,0 +1,15 @@
+In this assignment, we are going to design and implement a framework for placing orders for buying and selling stocks. 
+A client places orders for buying or selling stocks to an agent. The agent takes the orders and sends them to the StockTrade system. 
+The Agent accepts orders 24x7, but the StockTrade system opens only between 9:30am to 4:00pm on weekdays. 
+If client places orderoutside StockTrade working hours, the agent queues them to be processed later on.
+
+The StockTrade system has the interface as below.
+class StockTrade {
+    public void buy(String symbol, int amount) {
+        System.out.println("Buy " + amount + " " + symbol + " stocks");
+    }
+    public void sell(String symbol, int amount) {
+        System.out.println("Sell " + amount + " " + symbol + " stocks");
+    }
+}
+ 
